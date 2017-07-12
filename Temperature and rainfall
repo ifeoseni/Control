@@ -1,0 +1,55 @@
+
+import java.util.*;
+import javax.swing.*;
+public class Aduku_Oseni {
+
+    public Aduku_Oseni() {
+    }
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int [] Temperature=new int [5];//for only 5 values of temperature   
+        int Temperaturesum=0;//to sum temperature
+        for(int i =0;i < Temperature.length;i++){
+        System.out.println("Enter temperature "+(i+1));
+        	Temperature[i]=input.nextInt();
+        
+        Temperaturesum += Temperature[i];
+        }System.out.println("Temperaturesum ="+Temperaturesum);
+         float Temperaturemean=Temperaturesum/Temperature.length;
+         System.out.println(" Temperaturemean ="+Temperaturemean);
+         
+         int [] Rainfall=new int [5];
+        
+        int Rainfallsum=0;
+        for(int j =0;j < Temperature.length;j++){
+        	System.out.println("Enter rainfall "+(j+1));
+        	Rainfall[j]=input.nextInt();
+        
+        Rainfallsum += Rainfall[j];
+        }System.out.println("Rainfallsum ="+Rainfallsum);
+        double Rainfallmean =(Rainfallsum/Rainfall.length);
+        System.out.println("Rainfallmean ="+Rainfallmean);
+        double xminusxmeansquare=(((Temperature[0]-Temperaturemean)*(Temperature[0]-Temperaturemean))+(Temperature[1]-Temperaturemean)*(Temperature[1]-Temperaturemean)+(Temperature[2]-Temperaturemean)*(Temperature[2]-Temperaturemean)+(Temperature[3]-Temperaturemean)*(Temperature[3]-Temperaturemean)+(Temperature[4]-Temperaturemean)*(Temperature[4]-Temperaturemean));
+        double yminusymeansquare= (((Rainfall[0]-Rainfallmean)*(Rainfall[0]-Rainfallmean))+(Rainfall[1]-Rainfallmean)*(Rainfall[1]-Rainfallmean)+(Rainfall[2]-Rainfallmean)*(Rainfall[2]-Rainfallmean)+(Rainfall[3]-Rainfallmean)*(Rainfall[3]-Rainfallmean)+(Rainfall[4]-Rainfallmean)*(Rainfall[4]-Rainfallmean));
+       
+        	System.out.println("xminusxmeansquare = "+xminusxmeansquare+"\nyminusymeansquare "+yminusymeansquare);
+        double Xsys=(((Temperature[0]-Temperaturemean)*(Temperature[0]-Temperaturemean))*((Rainfall[0]-Rainfallmean)*(Rainfall[0]-Rainfallmean))
+        	+(Temperature[1]-Temperaturemean)*(Temperature[1]-Temperaturemean)*((Rainfall[1]-Rainfallmean)*(Rainfall[1]-Rainfallmean))
+        		+((Temperature[2]-Temperaturemean)*(Temperature[2]-Temperaturemean)*(Rainfall[2]-Rainfallmean)*(Rainfall[2]-Rainfallmean))
+        			+((Temperature[3]-Temperaturemean)*(Temperature[3]-Temperaturemean)*(Rainfall[3]-Rainfallmean)*(Rainfall[3]-Rainfallmean))+
+        				(Temperature[4]-Temperaturemean)*(Temperature[4]-Temperaturemean)*(Rainfall[4]-Rainfallmean)*(Rainfall[4]-Rainfallmean));
+        System.out.println("Xs*Ys "+Xsys);
+       
+        double Rc=Xsys/(Math.sqrt(Xsys));
+        System.out.println("Rc ="+Rc);
+        JOptionPane.showMessageDialog(null,"Rc is equal to "+Rc);
+        
+    }
+}
+ 
+
+
+
+
+
+
